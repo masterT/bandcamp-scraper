@@ -1,0 +1,38 @@
+{
+  "name": "bandcamp-scraper",
+  "version": "0.1.0",
+  "description": "A scraper for bandcamp.com",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/masterT/bandcamp-scraper"
+  },
+  "author": "Simon Thiboutôt <salut@simonthiboutot.com> (http://simonthiboutot.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/masterT/bandcamp-scraper/issues"
+  },
+  "homepage": "https://github.com/masterT/bandcamp-scraper",
+  "devDependencies": {},
+  "dependencies": {
+    "cheerio": "^0.19.0",
+    "diacritics": "^1.2.2",
+    "linez": "^4.1.0",
+    "request": "^2.61.0",
+    "slug": "^0.9.1"
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "keywords": [
+    "scraper",
+    "bandcamp",
+    "music",
+    "album",
+    "indie",
+    "product"
+  ]
+}
