@@ -1,7 +1,7 @@
 {
   "name": "bandcamp-scraper",
   "version": "0.1.0",
-  "description": "A scraper for bandcamp.com",
+  "description": "A scraper for https://bandcamp.com",
   "main": "lib/index.js",
   "scripts": {
     "test": ""
@@ -31,8 +31,7 @@
     "scraper",
     "bandcamp",
     "music",
-    "album",
-    "indie",
+    "album",    
     "product"
   ]
 }

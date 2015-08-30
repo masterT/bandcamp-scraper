@@ -1,5 +1,8 @@
 # bandcamp-scraper
 
+[![NPM version](https://img.shields.io/npm/v/bandcamp-scraper.svg?style=flat-square)](https://npmjs.org/package/bandcamp-scraper)
+[![Dependency Status](https://gemnasium.com/masterT/bandcamp-scraper.svg)](https://gemnasium.com/masterT/bandcamp-scraper)
+
 It is a scraper for [bandcamp.com](https://bandcamp.com/) that allows you to:
 
 - search anything (artist, album, track, fan) by keywords
@@ -10,6 +13,8 @@ It is a scraper for [bandcamp.com](https://bandcamp.com/) that allows you to:
 #### Why ?
 
 Because the Bandcamp's API is no longer supported and Bandcamp is not granting any new developer keys.
+
+[https://bandcamp.com/developer](https://bandcamp.com/developer)
 
 
 ## Installation
