@@ -130,6 +130,8 @@ An array of URL of Object that represent a product related to the album.
 
 **Product properties**
 
+- link: String
+- images: Array of String
 - name: String
 - description: String
 - format: String
