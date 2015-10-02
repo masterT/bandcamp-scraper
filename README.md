@@ -146,7 +146,7 @@ An array of URL of Object that represent a product related to the album.
 
 ## Test
 
-TODO: write some tests
+TODO: write some tests and better doc.
 
 ## Contributing
 
