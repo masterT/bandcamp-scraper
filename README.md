@@ -10,6 +10,9 @@ It is a scraper for [bandcamp.com](https://bandcamp.com/) that allows you to:
 - get all products from an album URL
 
 
+**I plan to refactor this module this summer 2016!** 😎
+
+
 #### Why ?
 
 Because the Bandcamp's API is no longer supported and Bandcamp is not granting any new developer keys.
