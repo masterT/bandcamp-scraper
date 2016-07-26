@@ -1,12 +1,14 @@
 var bandcamp = require('../lib/index');
 
-bandcamp.search({
+var params = {
   query: 'Coeur de pirate',
   page: 1
-}, function(error, results) {
+};
+
+bandcamp.search(params, function(error, searchResults) {
   if (error) {
     console.log(error);
   } else {
-    console.log(results);
+    console.log(searchResults);
   }
 });

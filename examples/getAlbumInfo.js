@@ -1,9 +1,10 @@
 var bandcamp = require('../lib/index');
 
-bandcamp.getAlbumInfo("http://joshwhelchel.com/album/oblitus", function(error, products) {
+var albumUrl = 'http://musique.coeurdepirate.com/album/blonde';
+bandcamp.getAlbumInfo(albumUrl, function(error, albumInfo) {
   if (error) {
     console.log(error);
   } else {
-    console.log(products);
+    console.log(albumInfo);
   }
 });

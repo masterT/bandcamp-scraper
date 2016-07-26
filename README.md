@@ -1,159 +1,228 @@
 # bandcamp-scraper
 
-[![NPM version](https://img.shields.io/npm/v/bandcamp-scraper.svg?style=flat-square)](https://npmjs.org/package/bandcamp-scraper)
 [![Dependency Status](https://gemnasium.com/masterT/bandcamp-scraper.svg)](https://gemnasium.com/masterT/bandcamp-scraper)
+[![TravisCI Status](https://travis-ci.org/masterT/bandcamp-scraper.svg)](https://travis-ci.org/masterT/bandcamp-scraper)
 
-It is a scraper for [bandcamp.com](https://bandcamp.com/) that allows you to:
+> A scraper for https://bandcamp.com
 
-- search anything (artist, album, track, fan) by keywords
-- get all album URLs from an artist URL
-- get all products from an album URL
+The scraper allow you to:
 
-
-**I plan to refactor this module this summer 2016!** 😎
+- search `artist`, `album`, `track`, `fan`
+- get album urls from an artist url
+- get album info from an album url
+- get album products from an album url
 
 
 #### Why ?
 
-Because the Bandcamp's API is no longer supported and Bandcamp is not granting any new developer keys.
+Because Bandcamp has shut down there public API and don't plan to-reopen it.
 
 [https://bandcamp.com/developer](https://bandcamp.com/developer)
 
 
 ## Installation
 
-`npm install bandcamp-scraper`
+```bash
+npm i --save bandcamp-scraper
+```
 
 ## Usage
 
-Require library
+### `search(params, callback)`
 
-```js
-var bandcamp = require('bandcamp-scraper');
-```
+Search any resources that matches the given `params.query` for the current `params.page`.
 
-### Search
+- params *Object*
+	- query *String*
+	- page *Integer* (default `1`)
+- callback *Function(error, searchResults)*
 
-```js
-bandcamp.search({
-	query: 'Coeur de pirate',
-	page: 1
-}, function(error, results) {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log(results);
-  }
-});
-```
+#### Search Results
 
-#### Query Params
-
-- **query**: keywords (required)
-- **page**: results page (default: 1)
-
-#### Results
-
-An array of Object that have different properties depending on the type.
+An array of resources that have different properties depending on the **type**. Every resource matches the [search-result JSON schema](/schemas/search-result.json).
 
 - **artist**
-	- type: String
-	- name: String
-	- link: String
-	- image: String
-	- tags: Array
-	- genre: String
-	- from: String
+	- type: *String*
+	- name: *String*
+	- url: *String*
+	- imageUrl: *String*
+	- tags: *Array*
+	- genre: *String*
+	- location: *String*
 
 
 - **album**
-	- type: String
-	- name: String
-	- link: String
-	- image: String
-	- tags: Array
-	- releaseDate: String
-	- artist: String
-	- numTracks: Integer
-	- numMinutes: Integer
+	- type: *String*
+	- name: *String*
+	- url: *String*
+	- imageUrl: *String*
+	- tags: *Array*
+	- releaseDate: *String*
+	- artist: *String*
+	- numTracks: *Integer*
+	- numMinutes: *Integer*
 
 - **track**
-	- type: String
-	- name: String
-	- link: String
-	- image: String
-	- tags: Array
-	- releaseDate: String
-	- album: String
-	- artist: String
+	- type: *String*
+	- name: *String*
+	- url: *String*
+	- imageUrl: *String*
+	- tags: *Array*
+	- releaseDate: *String*
+	- album: *String*
+	- artist: *String*
 
 - **fan**
-	- type: String
-	- name: String
-	- link: String
-	- image: String
-	- tags: Array
-	- genre: String
+	- type: *String*
+	- name: *String*
+	- url: *String*
+	- imageUrl: *String*
+	- tags: *Array*
+	- genre: *String*
 
 
-### Get albums URL
+#### Example
 
 ```js
-var artistURL = "http://musique.coeurdepirate.com/";
-bandcamp.getArtistAlbumURLs(artistURL, function(error, results) {
+var bandcamp = require('bandcamp-scraper');
+
+var params = {
+  query: 'Coeur de pirate',
+  page: 1
+};
+
+bandcamp.search(params, function(error, searchResults) {
   if (error) {
     console.log(error);
   } else {
-    console.log(results);
+    console.log(searchResults);
   }
 });
 ```
 
-#### Results
+### `getAlbumUrls(artistUrl, callback)`
 
-An array of URL for each album of the artist.
+Retrieve the album URLs from an artist URL.
 
+- artistUrl *String*
+- callback *Function(error, albumUrls)*
 
-### Get album's products
+#### Example
 
 ```js
-var albumURL = "http://musique.coeurdepirate.com/album/blonde";
-bandcamp.getAlbumProducts(albumURL, function(error, results) {
+var bandcamp = require('bandcamp-scraper');
+
+var artistUrl = 'http://musique.coeurdepirate.com/';
+bandcamp.getAlbumUrls(artistUrl, function(error, albumUrls) {
   if (error) {
     console.log(error);
   } else {
-    console.log(results);
+    console.log(albumUrls);
   }
 });
 ```
 
-#### Results
 
-An array of URL of Object that represent a product related to the album.
+### `getAlbumProducts(albumUrl, callback)`
 
-**Product properties**
+Retrieves all the album's products of from its URL.
 
-- link: String
-- images: Array of String
-- name: String
-- description: String
-- format: String
-- priceInCents: Integer
-- currency: String (3 letters)
-- nameYourPrice: Boolean
-- orMore: Boolean
-- soldOut: Boolean
-- numRemaining: Integer (null if there is no remaning count)
+- albumUrl *String*
+- callback *Function(error, albumProducts)*
 
+#### Album Products
+
+An array album products that matches the [album-product JSON schema](/schemas/album-product.json).
+
+- name: *String*
+- format: *String*
+- url: *String*
+- imageUrls *Array*
+- priceInCents *Integer*
+- description *String*
+- soldOut *Boolean*
+- nameYourPrice *Boolean* (voluntary contribution)
+- offerMore *Boolean* (accepts more than the `priceInCents`)
+- currency *Boolean* (3 letters)
+
+
+#### Example
+
+```js
+var bandcamp = require('bandcamp-scraper');
+
+var albumUrl = 'http://musique.coeurdepirate.com/album/blonde';
+bandcamp.getAlbumProducts(albumUrl, function(error, albumProducts) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log(albumProducts);
+  }
+});
+```
+
+
+### `getAlbumInfo(albumUrl, callback)`
+
+Retrieves the album's info of from its URL.
+
+- albumUrl *String*
+- callback *Function(error, albumInfo)*
+
+#### Album Info
+
+An *Object* that represents the album's info. It matches the [album-info JSON schema](/schemas/album-info.json).
+
+- artist: *String*
+- title: *String*
+- url: *String*
+- imageUrl *String*
+- tracks *Array* (See below)
+- raw *Object* (js variable `TralbumData` hidden in the html)
+
+#### Track
+
+- name *String*
+- url *String*
+- duration *String*
+
+#### Example
+
+```js
+var bandcamp = require('bandcamp-scraper');
+
+var albumUrl = 'http://musique.coeurdepirate.com/album/blonde';
+bandcamp.getAlbumInfo(albumUrl, function(error, albumInfo) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log(albumInfo);
+  }
+});
+```
+
+## Change Log
+
+#### 1.0.0 (2016-07-25)
+- rename resource property `image` -> `imageUrl`
+- rename resource property `images` -> `imageUrls`
+- rename resource property `link` -> `url`
+- rename resource property `from` -> `location`
+- rename resource property `orMore` -> `offerMore`
+- remove resource property `numRemaining`
 
 
 ## Test
 
-TODO: write some tests and better doc.
+```bash
+npm test
+```
+
 
 ## Contributing
 
 Contribution is welcome! Open an issue first.
+
 
 ## License
 
