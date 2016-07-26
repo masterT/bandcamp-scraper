@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "ajv": "^4.2.0",
-    "cheerio": "^0.19.0",
+    "cheerio": "^0.20.0",
     "linez": "^4.1.0",
     "scrape-it": "^3.1.1",
     "tinyreq": "^3.1.0"
