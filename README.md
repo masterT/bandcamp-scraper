@@ -3,6 +3,8 @@
 [![Dependency Status](https://gemnasium.com/masterT/bandcamp-scraper.svg)](https://gemnasium.com/masterT/bandcamp-scraper)
 [![TravisCI Status](https://travis-ci.org/masterT/bandcamp-scraper.svg)](https://travis-ci.org/masterT/bandcamp-scraper)
 
+![Bandcamp Logo](assets/bandcamp.png)
+
 > A scraper for https://bandcamp.com
 
 The scraper allow you to:
