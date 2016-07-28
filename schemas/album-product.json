@@ -7,6 +7,7 @@
   "additionalProperties": false,
   "properties": {
     "name": { "type": "string" },
+    "artist": { "type": "string" },    
     "format": { "type": "string" },
     "url": { "type": "string", "format": "uri" },
     "imageUrls": {
@@ -30,5 +31,5 @@
       ]
     }
   },
-  "requires": [ "name", "format", "url", "imageUrls", "priceInCents", "currency", "description", "soldOut", "nameYourPrice", "offerMore" ]
+  "required": [ "name", "artist", "format", "url", "imageUrls", "priceInCents", "currency", "description", "soldOut", "nameYourPrice", "offerMore" ]
 }

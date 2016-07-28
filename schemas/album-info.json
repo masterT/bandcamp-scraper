@@ -9,7 +9,7 @@
         "url": { "type": "string", "format": "uri" },
         "duration": { "type": "string" }
       },
-      "requires": [ "name", "url", "duration" ]
+      "required": [ "name", "url", "duration" ]
     }
   },
   "title" : "album-info",
@@ -33,5 +33,5 @@
       "type": "object"
     }
   },
-  "requires": [ "artist", "title", "url", "imageUrl", "tracks", "raw" ]
+  "required": [ "artist", "title", "url", "imageUrl", "tracks", "raw" ]
 }

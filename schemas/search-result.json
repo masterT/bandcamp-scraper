@@ -24,7 +24,7 @@
         "genre": { "type": "string" },
         "location": { "type": "string" }
       },
-      "requires": [ "type", "name", "url", "imageUrl", "tags", "location" ]
+      "required": [ "type", "name", "url", "imageUrl", "tags", "location" ]
     },
     "album": {
       "additionalProperties": false,
@@ -50,7 +50,7 @@
         "numTracks": { "type": "integer" },
         "numMinutes": { "type": "integer" }
       },
-      "requires": [ "type", "name", "url", "imageUrl", "tags", "releaseDate", "artist", "numTracks", "numMinutes" ]
+      "required": [ "type", "name", "url", "imageUrl", "tags", "releaseDate", "artist", "numTracks", "numMinutes" ]
     },
     "track": {
       "type": "object",
@@ -76,7 +76,7 @@
         "album": { "type": "string" },
         "artist": { "type": "string" }
       },
-      "requires": [ "type", "name", "url", "imageUrl", "tags", "releaseDate", "album", "artist" ]
+      "required": [ "type", "name", "url", "imageUrl", "tags", "releaseDate", "album", "artist" ]
     },
     "fan": {
       "type": "object",
@@ -100,7 +100,7 @@
         },
         "genre": { "type": "string" }
       },
-      "requires": [ "type", "name", "url", "imageUrl", "tags", "genre" ]
+      "required": [ "type", "name", "url", "imageUrl", "tags", "genre" ]
     }
   },
   "title" : "search-result",

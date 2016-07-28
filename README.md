@@ -135,6 +135,7 @@ Retrieves all the album's products of from its URL.
 An array album products that matches the [album-product JSON schema](/schemas/album-product.json).
 
 - name: *String*
+- artist: *String*
 - format: *String*
 - url: *String*
 - imageUrls *Array*
@@ -202,6 +203,12 @@ bandcamp.getAlbumInfo(albumUrl, function(error, albumInfo) {
 ```
 
 ## Change Log
+
+#### 1.0.1 (2016-07-28)
+- add property `artist` to album product
+- add property `url` to album info
+- fix typo in JSON schemas for `required` keyword
+- fix add missing properties `releaseDate`, `numTracks`, `numMinutes` for search result type `"album"`
 
 #### 1.0.0 (2016-07-25)
 - rename resource property `image` -> `imageUrl`
