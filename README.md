@@ -1,5 +1,6 @@
 # bandcamp-scraper
 
+[![npm version](https://badge.fury.io/js/bandcamp-scraper.svg)](https://badge.fury.io/js/bandcamp-scraper)
 [![Dependency Status](https://gemnasium.com/masterT/bandcamp-scraper.svg)](https://gemnasium.com/masterT/bandcamp-scraper)
 [![TravisCI Status](https://travis-ci.org/masterT/bandcamp-scraper.svg)](https://travis-ci.org/masterT/bandcamp-scraper)
 
