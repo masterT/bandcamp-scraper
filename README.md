@@ -41,47 +41,9 @@ Search any resources that matches the given `params.query` for the current `para
 
 #### Search Results
 
-An array of resources that have different properties depending on the **type**. Every resource matches the [search-result JSON schema](/schemas/search-result.json).
+An array of resources that have different properties depending on their _type_ property: **artist**, **album**, **track** or **fan**.
 
-- **artist**
-	- type: *String*
-	- name: *String*
-	- url: *String*
-	- imageUrl: *String*
-	- tags: *Array*
-	- genre: *String*
-	- location: *String*
-
-
-- **album**
-	- type: *String*
-	- name: *String*
-	- url: *String*
-	- imageUrl: *String*
-	- tags: *Array*
-	- releaseDate: *String*
-	- artist: *String*
-	- numTracks: *Integer*
-	- numMinutes: *Integer*
-
-- **track**
-	- type: *String*
-	- name: *String*
-	- url: *String*
-	- imageUrl: *String*
-	- tags: *Array*
-	- releaseDate: *String*
-	- album: *String*
-	- artist: *String*
-
-- **fan**
-	- type: *String*
-	- name: *String*
-	- url: *String*
-	- imageUrl: *String*
-	- tags: *Array*
-	- genre: *String*
-
+Every resource matches the [search-result JSON schema](/schemas/search-result.json).
 
 #### Example
 
@@ -136,19 +98,6 @@ Retrieves all the album's products of from its URL.
 
 An array album products that matches the [album-product JSON schema](/schemas/album-product.json).
 
-- name: *String*
-- artist: *String*
-- format: *String*
-- url: *String*
-- imageUrls *Array*
-- priceInCents *Integer*
-- description *String*
-- soldOut *Boolean*
-- nameYourPrice *Boolean* (voluntary contribution)
-- offerMore *Boolean* (accepts more than the `priceInCents`)
-- currency *Boolean* (3 letters)
-
-
 #### Example
 
 ```js
@@ -175,19 +124,6 @@ Retrieves the album's info of from its URL.
 #### Album Info
 
 An *Object* that represents the album's info. It matches the [album-info JSON schema](/schemas/album-info.json).
-
-- artist: *String*
-- title: *String*
-- url: *String*
-- imageUrl *String*
-- tracks *Array* (See below)
-- raw *Object* (js variable `TralbumData` hidden in the html)
-
-#### Track
-
-- name *String*
-- url *String*
-- duration *String*
 
 #### Example
 
