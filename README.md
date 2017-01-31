@@ -204,24 +204,12 @@ bandcamp.getAlbumInfo(albumUrl, function(error, albumInfo) {
 });
 ```
 
-## Change Log
-
-#### 1.0.1 (2016-07-28)
-- add property `artist` to album product
-- add property `url` to album info
-- fix typo in JSON schemas for `required` keyword
-- fix add missing properties `releaseDate`, `numTracks`, `numMinutes` for search result type `"album"`
-
-#### 1.0.0 (2016-07-25)
-- rename resource property `image` -> `imageUrl`
-- rename resource property `images` -> `imageUrls`
-- rename resource property `link` -> `url`
-- rename resource property `from` -> `location`
-- rename resource property `orMore` -> `offerMore`
-- remove resource property `numRemaining`
-
 
 ## Test
+
+Feature tests are run _daily_, thank to Travis Ci new feature [CRON Jobs](https://docs.travis-ci.com/user/cron-jobs/). This way we know if the scraper is ever broken.
+
+Run the test:
 
 ```bash
 npm test
