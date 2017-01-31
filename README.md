@@ -64,6 +64,9 @@ bandcamp.search(params, function(error, searchResults) {
 });
 ```
 
+[View example with output](examples/search.js).
+
+
 ### `getAlbumUrls(artistUrl, callback)`
 
 Retrieve the album URLs from an artist URL.
@@ -85,6 +88,8 @@ bandcamp.getAlbumUrls(artistUrl, function(error, albumUrls) {
   }
 });
 ```
+
+[View example with output](examples/getAlbumUrls.js).
 
 
 ### `getAlbumProducts(albumUrl, callback)`
@@ -113,6 +118,8 @@ bandcamp.getAlbumProducts(albumUrl, function(error, albumProducts) {
 });
 ```
 
+[View example with output](examples/getAlbumProducts.js).
+
 
 ### `getAlbumInfo(albumUrl, callback)`
 
@@ -139,6 +146,8 @@ bandcamp.getAlbumInfo(albumUrl, function(error, albumInfo) {
   }
 });
 ```
+
+[View example with output](examples/getAlbumInfo.js).
 
 
 ## Test
