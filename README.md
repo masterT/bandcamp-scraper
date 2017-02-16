@@ -10,7 +10,7 @@
 
 The scraper allow you to:
 
-- search `artist`, `album`, `track`, `fan`
+- search `artist`, `album`, `track`, `fan`, `label`
 - get album urls from an artist url
 - get album info from an album url
 - get album products from an album url
@@ -42,7 +42,7 @@ Search any resources that matches the given `params.query` for the current `para
 
 #### Search Results
 
-An array of resources that have different properties depending on their _type_ property: **artist**, **album**, **track** or **fan**.
+An array of resources that have different properties depending on their _type_ property: **artist**, **album**, **track**, **fan**, or **label**.
 
 Every resource matches the [search-result JSON schema](/schemas/search-result.json).
 
