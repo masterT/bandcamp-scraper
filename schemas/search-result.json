@@ -124,7 +124,7 @@
         }
       },
       "required": [ "type", "name", "url", "imageUrl", "tags" ]
-    },
+    }
   },
   "title" : "search-result",
   "description" : "The JSON schema that matches a search result.",
