@@ -101,7 +101,30 @@
         "genre": { "type": "string" }
       },
       "required": [ "type", "name", "url", "imageUrl", "tags", "genre" ]
-    }
+    },
+    "label": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": { "type": "string" },
+        "name": { "type": "string" },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "imageUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [ "type", "name", "url", "imageUrl", "tags" ]
+    },
   },
   "title" : "search-result",
   "description" : "The JSON schema that matches a search result.",
@@ -110,6 +133,7 @@
     { "$ref": "#/definitions/artist" },
     { "$ref": "#/definitions/album" },
     { "$ref": "#/definitions/track" },
-    { "$ref": "#/definitions/fan" }
+    { "$ref": "#/definitions/fan" },
+    { "$ref": "#/definitions/label" }
   ]
 }
