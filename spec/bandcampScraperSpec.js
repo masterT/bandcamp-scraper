@@ -8,7 +8,6 @@ var artists = [
   'Cœur de pirate',
   'Tiger Jazz Club',
   'Mac DeMarco',
-  'deadmau5',
   'Faded Paper Figures'
 ];
 
@@ -46,7 +45,6 @@ var albumUrls = [
   'https://fadedpaperfigures.bandcamp.com/album/the-matter',
   'https://fadedpaperfigures.bandcamp.com/album/new-medium',
   'https://fadedpaperfigures.bandcamp.com/album/dynamo',
-  'https://deadmau5live.bandcamp.com/album/w-2016album',
   'https://macdemarco.bandcamp.com/album/another-one',
   'https://macdemarco.bandcamp.com/album/salad-days',
   'https://macdemarco.bandcamp.com/album/2',
