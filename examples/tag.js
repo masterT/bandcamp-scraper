@@ -5,7 +5,7 @@ var params = {
   page: 1
 };
 
-bandcamp.tag(params, function(error, tagResults) {
+bandcamp.getAlbumsWithTag(params, function(error, tagResults) {
   if (error) {
     console.log(error);
   } else {

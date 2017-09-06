@@ -68,7 +68,7 @@ bandcamp.search(params, function(error, searchResults) {
 [View example with output](examples/search.js).
 
 
-### `tag(params, callback)`
+### `getAlbumsWithTag(params, callback)`
 
 Search for albums with the tag `params.tag` for the current `params.page`.
 
@@ -91,7 +91,7 @@ var params = {
   page: 1
 };
 
-bandcamp.tag(params, function(error, tagResults) {
+bandcamp.getAlbumsWithTag(params, function(error, tagResults) {
   if (error) {
     console.log(error);
   } else {
