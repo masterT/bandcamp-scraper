@@ -17,14 +17,14 @@
   },
   "homepage": "https://github.com/masterT/bandcamp-scraper",
   "devDependencies": {
-    "jasmine": "^2.4.1"
+    "jasmine": "^2.8.0"
   },
   "dependencies": {
-    "ajv": "^4.2.0",
+    "ajv": "^4.11.8",
     "cheerio": "^0.22.0",
     "linez": "^4.1.4",
-    "scrape-it": "^3.1.1",
-    "tinyreq": "^3.1.0"
+    "scrape-it": "^3.3.2",
+    "tinyreq": "^3.2.5"
   },
   "directories": {
     "example": "examples"
