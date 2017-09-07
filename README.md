@@ -8,7 +8,7 @@
 
 > A scraper for https://bandcamp.com
 
-The scraper allow you to:
+The scraper allows you to:
 
 - search `artist`, `album`, `track`, `fan`, `label`
 - get album urls from an artist url
@@ -18,7 +18,7 @@ The scraper allow you to:
 
 #### Why ?
 
-Because Bandcamp has shut down there public API and don't plan to-reopen it.
+Because Bandcamp has shut down their public API and don't plan to reopen it.
 
 [https://bandcamp.com/developer](https://bandcamp.com/developer)
 
@@ -33,7 +33,7 @@ npm i --save bandcamp-scraper
 
 ### `search(params, callback)`
 
-Search any resources that matches the given `params.query` for the current `params.page`.
+Search any resources that match the given `params.query` for the current `params.page`.
 
 - params *Object*
 	- query *String*
@@ -130,14 +130,14 @@ bandcamp.getAlbumUrls(artistUrl, function(error, albumUrls) {
 
 ### `getAlbumProducts(albumUrl, callback)`
 
-Retrieves all the album's products of from its URL.
+Retrieves all the album's products from its URL.
 
 - albumUrl *String*
 - callback *Function(error, albumProducts)*
 
 #### Album Products
 
-An array album products that matches the [album-product JSON schema](/schemas/album-product.json).
+An array of album products that matches the [album-product JSON schema](/schemas/album-product.json).
 
 #### Example
 
@@ -159,7 +159,7 @@ bandcamp.getAlbumProducts(albumUrl, function(error, albumProducts) {
 
 ### `getAlbumInfo(albumUrl, callback)`
 
-Retrieves the album's info of from its URL.
+Retrieves the album's info from its URL.
 
 - albumUrl *String*
 - callback *Function(error, albumInfo)*
