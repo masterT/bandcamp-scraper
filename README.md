@@ -68,6 +68,41 @@ bandcamp.search(params, function(error, searchResults) {
 [View example with output](examples/search.js).
 
 
+### `getAlbumsWithTag(params, callback)`
+
+Search for albums with the tag `params.tag` for the current `params.page`.
+
+- params *Object*
+	- tag *String*
+	- page *Integer* (default `1`)
+- callback *Function(error, tagResults)*
+
+#### Tag Results
+
+An array of album information. Matches the [tag-result JSON schema](/schemas/tag-result.json).
+
+#### Example
+
+```js
+var bandcamp = require('bandcamp-scraper');
+
+var params = {
+  tag: 'nuwrld',
+  page: 1
+};
+
+bandcamp.getAlbumsWithTag(params, function(error, tagResults) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log(tagResults);
+  }
+});
+```
+
+[View example with output](examples/tag.js).
+
+
 ### `getAlbumUrls(artistUrl, callback)`
 
 Retrieve the album URLs from an artist URL.

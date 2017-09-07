@@ -8,6 +8,7 @@ var ajv = new Ajv();
 ajv.addSchema(require('../schemas/search-result.json'), 'search-result');
 ajv.addSchema(require('../schemas/album-product.json'), 'album-product');
 ajv.addSchema(require('../schemas/album-info.json'), 'album-info');
+ajv.addSchema(require('../schemas/tag-result.json'), 'tag-result');
 
 function fixture(filename) {
   var filepath = path.join(__dirname, 'fixtures', filename + '.html');
@@ -85,4 +86,15 @@ describe("htmlParser", function () {
 
   });
 
+  describe("parseTagResults", function () {
+    it("parse search results", function () {
+      var html = fixture('tag');
+      var tagResults = htmlParser.parseTagResults(html);
+      expect(Array.isArray(tagResults)).toBe(true);
+      expect(tagResults.length).toBe(40);
+      tagResults.forEach(function (tagResult) {
+        expect(ajv.validate('tag-result', tagResult)).toBe(true);
+      });
+    });
+  });
 });
