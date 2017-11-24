@@ -22,6 +22,7 @@
   "dependencies": {
     "ajv": "^4.11.8",
     "cheerio": "^0.22.0",
+    "json5": "^0.5.1",
     "linez": "^4.1.4",
     "scrape-it": "^3.3.2",
     "tinyreq": "^3.2.5"
