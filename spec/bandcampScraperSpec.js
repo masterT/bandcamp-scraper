@@ -48,7 +48,8 @@ var albumUrls = [
   'https://macdemarco.bandcamp.com/album/another-one',
   'https://macdemarco.bandcamp.com/album/salad-days',
   'https://macdemarco.bandcamp.com/album/2',
-  'https://macdemarco.bandcamp.com/album/rock-and-roll-night-club-2'
+  'https://macdemarco.bandcamp.com/album/rock-and-roll-night-club-2',
+  'https://fasterthanmusic.bandcamp.com/album/pr4kaneokastrna-ep'
 ];
 
 
