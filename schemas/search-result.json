@@ -129,11 +129,11 @@
   "title" : "search-result",
   "description" : "The JSON schema that matches a search result.",
   "id": "https://mastert.github.io/bandcamp-scraper/schemas/search-result.json",
-  "oneOf": [
-    { "$ref": "#/definitions/artist" },
-    { "$ref": "#/definitions/album" },
-    { "$ref": "#/definitions/track" },
-    { "$ref": "#/definitions/fan" },
-    { "$ref": "#/definitions/label" }
+  "#/oneOf": [
+    { "$ref": "definitions/artist" },
+    { "$ref": "definitions/album" },
+    { "$ref": "definitions/track" },
+    { "$ref": "definitions/fan" },
+    { "$ref": "definitions/label" }
   ]
 }
