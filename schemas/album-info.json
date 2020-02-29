@@ -10,6 +10,14 @@
         "duration": { "type": "string" }
       },
       "required": [ "name" ]
+    },
+    "tag": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" }
+      },
+      "required": [ "name" ]
     }
   },
   "title" : "album-info",
@@ -28,6 +36,10 @@
     "tracks": {
       "type": "array",
       "items": { "$ref": "#/definitions/track" }
+    },
+    "tags": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/tag" }
     },
     "raw": {
       "type": "object"
