@@ -45,5 +45,5 @@
       "type": "object"
     }
   },
-  "required": [ "artist", "title", "url", "imageUrl", "tracks", "raw" ]
+  "required": [ "artist", "title", "url", "tracks", "raw" ]
 }
