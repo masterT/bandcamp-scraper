@@ -10,6 +10,14 @@
         "duration": { "type": "string" }
       },
       "required": [ "name" ]
+    },
+    "tag": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" }
+      },
+      "required": [ "name" ]
     }
   },
   "title" : "album-info",
@@ -29,9 +37,13 @@
       "type": "array",
       "items": { "$ref": "#/definitions/track" }
     },
+    "tags": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/tag" }
+    },
     "raw": {
       "type": "object"
     }
   },
-  "required": [ "artist", "title", "url", "imageUrl", "tracks", "raw" ]
+  "required": [ "artist", "title", "url", "tracks", "raw" ]
 }
