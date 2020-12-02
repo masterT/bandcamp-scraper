@@ -1,6 +1,6 @@
 {
   "name": "bandcamp-scraper",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "A scraper for https://bandcamp.com",
   "main": "lib/index.js",
   "scripts": {
