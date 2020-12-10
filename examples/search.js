@@ -1,17 +1,17 @@
-var bandcamp = require('../lib/index');
+const bandcamp = require('../lib/index')
 
-var params = {
+const params = {
   query: 'Coeur de pirate',
   page: 1
-};
+}
 
-bandcamp.search(params, function(error, searchResults) {
+bandcamp.search(params, function (error, searchResults) {
   if (error) {
-    console.log(error);
+    console.log(error)
   } else {
-    console.log(searchResults);
+    console.log(searchResults)
   }
-});
+})
 
 /*
 [ { type: 'album',

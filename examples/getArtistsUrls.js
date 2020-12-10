@@ -1,13 +1,13 @@
-var bandcamp = require("../lib/index");
+const bandcamp = require('../lib/index')
 
-var labelUrl = "https://randsrecords.bandcamp.com";
+const labelUrl = 'https://randsrecords.bandcamp.com'
 bandcamp.getArtistUrls(labelUrl, function (error, artistsUrls) {
   if (error) {
-    console.log(error);
+    console.log(error)
   } else {
-    console.log(artistsUrls);
+    console.log(artistsUrls)
   }
-});
+})
 
 /*
 [
