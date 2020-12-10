@@ -14,13 +14,11 @@ The scraper allows you to:
 - get album info from an album url
 - get album products from an album url
 
-
 #### Why ?
 
 Because Bandcamp has shut down their public API and don't plan to reopen it.
 
 [https://bandcamp.com/developer](https://bandcamp.com/developer)
-
 
 ## Installation
 
@@ -34,10 +32,8 @@ npm i --save bandcamp-scraper
 
 Search any resources that match the given `params.query` for the current `params.page`.
 
-- params *Object*
-	- query *String*
-	- page *Integer* (default `1`)
-- callback *Function(error, searchResults)*
+- params _Object_ - query _String_ - page _Integer_ (default `1`)
+- callback _Function(error, searchResults)_
 
 #### Search Results
 
@@ -48,14 +44,14 @@ Every resource matches the [search-result JSON schema](/schemas/search-result.js
 #### Example
 
 ```js
-var bandcamp = require('bandcamp-scraper');
+var bandcamp = require("bandcamp-scraper");
 
 var params = {
-  query: 'Coeur de pirate',
-  page: 1
+  query: "Coeur de pirate",
+  page: 1,
 };
 
-bandcamp.search(params, function(error, searchResults) {
+bandcamp.search(params, function (error, searchResults) {
   if (error) {
     console.log(error);
   } else {
@@ -66,15 +62,12 @@ bandcamp.search(params, function(error, searchResults) {
 
 [View example with output](examples/search.js).
 
-
 ### `getAlbumsWithTag(params, callback)`
 
 Search for albums with the tag `params.tag` for the current `params.page`.
 
-- params *Object*
-	- tag *String*
-	- page *Integer* (default `1`)
-- callback *Function(error, tagResults)*
+- params _Object_ - tag _String_ - page _Integer_ (default `1`)
+- callback _Function(error, tagResults)_
 
 #### Tag Results
 
@@ -83,14 +76,14 @@ An array of album information. Matches the [tag-result JSON schema](/schemas/tag
 #### Example
 
 ```js
-var bandcamp = require('bandcamp-scraper');
+var bandcamp = require("bandcamp-scraper");
 
 var params = {
-  tag: 'nuwrld',
-  page: 1
+  tag: "nuwrld",
+  page: 1,
 };
 
-bandcamp.getAlbumsWithTag(params, function(error, tagResults) {
+bandcamp.getAlbumsWithTag(params, function (error, tagResults) {
   if (error) {
     console.log(error);
   } else {
@@ -101,21 +94,21 @@ bandcamp.getAlbumsWithTag(params, function(error, tagResults) {
 
 [View example with output](examples/tag.js).
 
-
 ### `getAlbumUrls(artistUrl, callback)`
 
 Retrieve the album URLs from an artist URL.
+Please note: for Bandcamp labels you may want to use the `getArtistsUrls` function to retrieve the list of signed artists first.
 
-- artistUrl *String*
-- callback *Function(error, albumUrls)*
+- artistUrl _String_
+- callback _Function(error, albumUrls)_
 
 #### Example
 
 ```js
-var bandcamp = require('bandcamp-scraper');
+var bandcamp = require("bandcamp-scraper");
 
-var artistUrl = 'http://musique.coeurdepirate.com/';
-bandcamp.getAlbumUrls(artistUrl, function(error, albumUrls) {
+var artistUrl = "http://musique.coeurdepirate.com/";
+bandcamp.getAlbumUrls(artistUrl, function (error, albumUrls) {
   if (error) {
     console.log(error);
   } else {
@@ -126,13 +119,12 @@ bandcamp.getAlbumUrls(artistUrl, function(error, albumUrls) {
 
 [View example with output](examples/getAlbumUrls.js).
 
-
 ### `getAlbumProducts(albumUrl, callback)`
 
 Retrieves all the album's products from its URL.
 
-- albumUrl *String*
-- callback *Function(error, albumProducts)*
+- albumUrl _String_
+- callback _Function(error, albumProducts)_
 
 #### Album Products
 
@@ -141,10 +133,10 @@ An array of album products that matches the [album-product JSON schema](/schemas
 #### Example
 
 ```js
-var bandcamp = require('bandcamp-scraper');
+var bandcamp = require("bandcamp-scraper");
 
-var albumUrl = 'http://musique.coeurdepirate.com/album/blonde';
-bandcamp.getAlbumProducts(albumUrl, function(error, albumProducts) {
+var albumUrl = "http://musique.coeurdepirate.com/album/blonde";
+bandcamp.getAlbumProducts(albumUrl, function (error, albumProducts) {
   if (error) {
     console.log(error);
   } else {
@@ -155,25 +147,24 @@ bandcamp.getAlbumProducts(albumUrl, function(error, albumProducts) {
 
 [View example with output](examples/getAlbumProducts.js).
 
-
 ### `getAlbumInfo(albumUrl, callback)`
 
 Retrieves the album's info from its URL.
 
-- albumUrl *String*
-- callback *Function(error, albumInfo)*
+- albumUrl _String_
+- callback _Function(error, albumInfo)_
 
 #### Album Info
 
-An *Object* that represents the album's info. It matches the [album-info JSON schema](/schemas/album-info.json).
+An _Object_ that represents the album's info. It matches the [album-info JSON schema](/schemas/album-info.json).
 
 #### Example
 
 ```js
-var bandcamp = require('bandcamp-scraper');
+var bandcamp = require("bandcamp-scraper");
 
-var albumUrl = 'http://musique.coeurdepirate.com/album/blonde';
-bandcamp.getAlbumInfo(albumUrl, function(error, albumInfo) {
+var albumUrl = "http://musique.coeurdepirate.com/album/blonde";
+bandcamp.getAlbumInfo(albumUrl, function (error, albumInfo) {
   if (error) {
     console.log(error);
   } else {
@@ -184,6 +175,29 @@ bandcamp.getAlbumInfo(albumUrl, function(error, albumInfo) {
 
 [View example with output](examples/getAlbumInfo.js).
 
+### `getArtistUrls(labelUrl, callback)`
+
+Retrieves an array of artist URLs from a label's URL for further scraping.
+
+- labelUrl _String_
+- callback _Function(error, albumInfo)_
+
+#### Example
+
+```js
+var bandcamp = require("bandcamp-scraper");
+
+var labelUrl = "https://randsrecords.bandcamp.com";
+bandcamp.getArtistUrls(labelUrl, function (error, artistsUrls) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log(artistsUrls);
+  }
+});
+```
+
+[View example with output](examples/getArtistUrls.js).
 
 ## Test
 
@@ -195,11 +209,9 @@ Run the test:
 npm test
 ```
 
-
 ## Contributing
 
 Contribution is welcome! Open an issue first.
-
 
 ## License
 
