@@ -1,7 +1,8 @@
 # bandcamp-scraper
 
 [![npm version](https://badge.fury.io/js/bandcamp-scraper.svg)](https://badge.fury.io/js/bandcamp-scraper)
-[![TravisCI Status](https://travis-ci.org/masterT/bandcamp-scraper.svg)](https://travis-ci.org/masterT/bandcamp-scraper)
+![Test](https://github.com/masterT/bandcamp-scraper/workflows/Test/badge.svg?event=schedule)
+![Test daily](https://github.com/masterT/bandcamp-scraper/workflows/Test/badge.svg?event=schedule)
 
 [![Bandcamp Logo](assets/bandcamp.png)](https://bandcamp.com)
 
@@ -201,7 +202,7 @@ bandcamp.getArtistUrls(labelUrl, function (error, artistsUrls) {
 
 ## Test
 
-Feature tests are run _daily_, thank to Travis Ci new feature [CRON Jobs](https://docs.travis-ci.com/user/cron-jobs/). This way we know if the scraper is ever broken.
+Feature tests are run _daily_, thanks to [GitHub Action](https://docs.github.com/en/free-pro-team@latest/actions) schedule actions. This way we know if the scraper is ever broken.
 
 Run the test:
 
