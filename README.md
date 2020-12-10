@@ -46,20 +46,20 @@ Every resource matches the [search-result JSON schema](/schemas/search-result.js
 #### Example
 
 ```js
-var bandcamp = require("bandcamp-scraper");
+const bandcamp = require('bandcamp-scraper')
 
-var params = {
-  query: "Coeur de pirate",
-  page: 1,
-};
+const params = {
+  query: 'Coeur de pirate',
+  page: 1
+}
 
 bandcamp.search(params, function (error, searchResults) {
   if (error) {
-    console.log(error);
+    console.log(error)
   } else {
-    console.log(searchResults);
+    console.log(searchResults)
   }
-});
+})
 ```
 
 [View example with output](examples/search.js).
@@ -78,20 +78,20 @@ An array of album information. Matches the [tag-result JSON schema](/schemas/tag
 #### Example
 
 ```js
-var bandcamp = require("bandcamp-scraper");
+const bandcamp = require('bandcamp-scraper')
 
-var params = {
-  tag: "nuwrld",
-  page: 1,
-};
+const params = {
+  tag: 'nuwrld',
+  page: 1
+}
 
 bandcamp.getAlbumsWithTag(params, function (error, tagResults) {
   if (error) {
-    console.log(error);
+    console.log(error)
   } else {
-    console.log(tagResults);
+    console.log(tagResults)
   }
-});
+})
 ```
 
 [View example with output](examples/tag.js).
@@ -107,16 +107,16 @@ Please note: for Bandcamp labels you may want to use the `getArtistsUrls` functi
 #### Example
 
 ```js
-var bandcamp = require("bandcamp-scraper");
+const bandcamp = require('bandcamp-scraper')
 
-var artistUrl = "http://musique.coeurdepirate.com/";
+const artistUrl = 'http://musique.coeurdepirate.com/'
 bandcamp.getAlbumUrls(artistUrl, function (error, albumUrls) {
   if (error) {
-    console.log(error);
+    console.log(error)
   } else {
-    console.log(albumUrls);
+    console.log(albumUrls)
   }
-});
+})
 ```
 
 [View example with output](examples/getAlbumUrls.js).
@@ -135,16 +135,16 @@ An array of album products that matches the [album-product JSON schema](/schemas
 #### Example
 
 ```js
-var bandcamp = require("bandcamp-scraper");
+const bandcamp = require('bandcamp-scraper')
 
-var albumUrl = "http://musique.coeurdepirate.com/album/blonde";
+const albumUrl = 'http://musique.coeurdepirate.com/album/blonde'
 bandcamp.getAlbumProducts(albumUrl, function (error, albumProducts) {
   if (error) {
-    console.log(error);
+    console.log(error)
   } else {
-    console.log(albumProducts);
+    console.log(albumProducts)
   }
-});
+})
 ```
 
 [View example with output](examples/getAlbumProducts.js).
@@ -163,16 +163,16 @@ An _Object_ that represents the album's info. It matches the [album-info JSON sc
 #### Example
 
 ```js
-var bandcamp = require("bandcamp-scraper");
+const bandcamp = require('bandcamp-scraper')
 
-var albumUrl = "http://musique.coeurdepirate.com/album/blonde";
+const albumUrl = 'http://musique.coeurdepirate.com/album/blonde'
 bandcamp.getAlbumInfo(albumUrl, function (error, albumInfo) {
   if (error) {
-    console.log(error);
+    console.log(error)
   } else {
-    console.log(albumInfo);
+    console.log(albumInfo)
   }
-});
+})
 ```
 
 [View example with output](examples/getAlbumInfo.js).
@@ -187,16 +187,16 @@ Retrieves an array of artist URLs from a label's URL for further scraping.
 #### Example
 
 ```js
-var bandcamp = require("bandcamp-scraper");
+const bandcamp = require('bandcamp-scraper')
 
-var labelUrl = "https://randsrecords.bandcamp.com";
+const labelUrl = 'https://randsrecords.bandcamp.com'
 bandcamp.getArtistUrls(labelUrl, function (error, artistsUrls) {
   if (error) {
-    console.log(error);
+    console.log(error)
   } else {
-    console.log(artistsUrls);
+    console.log(artistsUrls)
   }
-});
+})
 ```
 
 [View example with output](examples/getArtistUrls.js).
