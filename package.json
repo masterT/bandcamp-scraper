@@ -4,7 +4,9 @@
   "description": "A scraper for https://bandcamp.com",
   "main": "lib/index.js",
   "scripts": {
-    "test": "jasmine"
+    "test": "standard && jasmine",
+    "lint": "standard",
+    "lint-fix": "standard --fix"
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,7 @@
     "json5": "^0.5.1",
     "linez": "^4.1.4",
     "scrape-it": "^3.3.2",
+    "standard": "^16.0.3",
     "tinyreq": "^3.2.5"
   },
   "directories": {
