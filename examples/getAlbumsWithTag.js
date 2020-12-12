@@ -1,17 +1,17 @@
-var bandcamp = require('../lib/index');
+const bandcamp = require('../lib/index')
 
-var params = {
+const params = {
   tag: 'nuwrld',
   page: 1
-};
+}
 
-bandcamp.getAlbumsWithTag(params, function(error, tagResults) {
+bandcamp.getAlbumsWithTag(params, function (error, tagResults) {
   if (error) {
-    console.log(error);
+    console.log(error)
   } else {
-    console.log(tagResults);
+    console.log(tagResults)
   }
-});
+})
 
 /*
 [ { name: 'RPGウィンドウズ ビスタ',

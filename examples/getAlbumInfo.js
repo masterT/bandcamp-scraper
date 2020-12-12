@@ -1,13 +1,13 @@
-var bandcamp = require('../lib/index');
+const bandcamp = require('../lib/index')
 
-var albumUrl = 'http://musique.coeurdepirate.com/album/blonde';
-bandcamp.getAlbumInfo(albumUrl, function(error, albumInfo) {
+const albumUrl = 'http://musique.coeurdepirate.com/album/blonde'
+bandcamp.getAlbumInfo(albumUrl, function (error, albumInfo) {
   if (error) {
-    console.log(error);
+    console.log(error)
   } else {
-    console.log(albumInfo);
+    console.log(albumInfo)
   }
-});
+})
 
 /*
 { artist: 'Cœur de pirate',

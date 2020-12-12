@@ -1,13 +1,13 @@
-var bandcamp = require('../lib/index');
+const bandcamp = require('../lib/index')
 
-var albumUrl = 'http://musique.coeurdepirate.com/album/blonde';
-bandcamp.getAlbumProducts(albumUrl, function(error, albumProducts) {
+const albumUrl = 'http://musique.coeurdepirate.com/album/blonde'
+bandcamp.getAlbumProducts(albumUrl, function (error, albumProducts) {
   if (error) {
-    console.log(error);
+    console.log(error)
   } else {
-    console.log(albumProducts);
+    console.log(albumProducts)
   }
-});
+})
 
 /*
 [ { description: 'Includes unlimited streaming via the free Bandcamp app, plus high-quality download in MP3, FLAC and more.La vente de Blonde comprend le téléchargement immédiat de l\'album, dans le format de votre choix.',
