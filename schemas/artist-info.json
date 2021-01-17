@@ -6,6 +6,22 @@
   "type": "object",
   "additionalProperties": false,
   "definitions": {
+    "album": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "title": {
+          "type": "string"
+        },
+        "coverImage": {
+          "type": "string"
+        }
+      }
+    },
     "show": {
       "type": "object",
       "additionalProperties": false,
@@ -52,6 +68,12 @@
     },
     "description": {
       "type": "string"
+    },
+    "albums": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/album"
+      }
     },
     "shows": {
       "type": "array",
