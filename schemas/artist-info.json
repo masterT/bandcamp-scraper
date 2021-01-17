@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "artist-info",
+  "description": "The JSON schema that matches artist info.",
+  "id": "https://mastert.github.io/bandcamp-scraper/schemas/artist-info.json",
+  "type": "object",
+  "additionalProperties": false,
+  "definitions": {
+    "show": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "type": "string"
+        },
+        "venue": {
+          "type": "string"
+        },
+        "venueUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "location": {
+          "type": "string"
+        }
+      }
+    },
+    "bandLink": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    }
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "coverImage": {
+      "type": "string",
+      "format": "uri"
+    },
+    "description": {
+      "type": "string"
+    },
+    "shows": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/show"
+      }
+    },
+    "bandLinks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/bandLink"
+      }
+    }
+  }
+}
