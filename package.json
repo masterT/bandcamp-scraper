@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/masterT/bandcamp-scraper",
   "devDependencies": {
-    "jasmine": "^2.8.0"
+    "jasmine": "^2.8.0",
+    "standard": "^16.0.3"
   },
   "dependencies": {
     "ajv": "^4.11.8",
@@ -27,7 +28,6 @@
     "json5": "^0.5.1",
     "linez": "^4.1.4",
     "scrape-it": "^3.3.2",
-    "standard": "^16.0.3",
     "tinyreq": "^3.2.5"
   },
   "directories": {
