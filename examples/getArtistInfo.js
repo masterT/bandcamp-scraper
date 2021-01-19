@@ -9,6 +9,7 @@ bandcamp.getArtistInfo(artistUrl, function (error, albumUrls) {
   }
 })
 
+/* eslint-disable no-irregular-whitespace */
 /*
 {
   name: 'Cœur de pirate',
@@ -345,3 +346,4 @@ bandcamp.getArtistInfo(artistUrl, function (error, albumUrls) {
   ]
 }
 */
+/* eslint-enable no-irregular-whitespace */
