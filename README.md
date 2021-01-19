@@ -227,6 +227,8 @@ bandcamp.getArtistInfo(artistUrl, function (error, artistInfo) {
 })
 ```
 
+[View example with output](examples/getArtistInfo.js).
+
 ## Test
 
 Feature tests are run _daily_, thanks to [GitHub Action](https://docs.github.com/en/free-pro-team@latest/actions) schedule actions. This way we know if the scraper is ever broken.
