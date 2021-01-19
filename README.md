@@ -15,6 +15,7 @@ The scraper allows you to:
 - get album urls from an artist url
 - get album info from an album url
 - get album products from an album url
+- get artist info from an artist url
 
 #### Why ?
 
@@ -200,6 +201,31 @@ bandcamp.getArtistUrls(labelUrl, function (error, artistsUrls) {
 ```
 
 [View example with output](examples/getArtistUrls.js).
+
+### `getArtistInfo(artistUrl, callback)`
+
+Retrieves the artist's info from its URL.
+
+- artistUrl _String_
+- callback _Function(error, artistInfo)_
+
+#### Artist Info
+
+An _Object_ that represents the artist's info. It matches the [artist-info JSON schema](/schemas/artist-info.json).
+#### Example
+
+```js
+const bandcamp = require('bandcamp-scraper')
+
+const artistUrl = 'http://musique.coeurdepirate.com'
+bandcamp.getArtistInfo(artistUrl, function (error, artistInfo) {
+  if (error) {
+    console.log(error)
+  } else {
+    console.log(artistInfo)
+  }
+})
+```
 
 ## Test
 

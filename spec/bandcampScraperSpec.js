@@ -154,4 +154,21 @@ describe('bandcamp-scraper', function () {
       )
     })
   })
+
+  describe('getArtistInfo', function () {
+    it('scrapes artist info', function (done) {
+      const artistUrl = sample(artistUrls)
+      expect(
+        bandcamp.getArtistInfo(artistUrl, function (error, artistInfo) {
+          console.log('artistUrl', artistUrl)
+          if (error) console.log('error', error)
+          if (artistInfo) console.log('artistInfo', artistInfo)
+          expect(error).toBeNull()
+          expect(typeof artistInfo).toEqual('object')
+          done()
+          // TODO validate with JSON schema
+        })
+      )
+    })
+  })
 })
