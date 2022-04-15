@@ -1,6 +1,26 @@
+# Logs
 logs
 *.log
-npm-debug.log*
-node_modules
-.npm
-.DS_Store
+yarn-debug.log*
+yarn-error.log*
+
+# Build
+dist/
+
+# Ignore documentation
+docs/
+
+# Ignore test coverage
+coverage/
+
+# Dependency directories
+node_modules/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional eslint cache
+.eslintcache
+
+# Yarn Integrity file
+.yarn-integrity

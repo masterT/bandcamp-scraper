@@ -1,248 +1,114 @@
+[![Bandcamp Logo](https://github.com/masterT/bandcamp-scraper/blob/master/assets/bandcamp.png?raw=true)](https://bandcamp.com)
+
 # bandcamp-scraper
 
 [![npm version](https://badge.fury.io/js/bandcamp-scraper.svg)](https://badge.fury.io/js/bandcamp-scraper)
-![Test](https://github.com/masterT/bandcamp-scraper/workflows/Test/badge.svg?event=push)
-![Test daily](https://github.com/masterT/bandcamp-scraper/workflows/Test/badge.svg?event=schedule)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-[![Bandcamp Logo](assets/bandcamp.png)](https://bandcamp.com)
+TypeScript and JavaScript client for Bandcamp using scraping and private API.
 
-> A scraper for https://bandcamp.com
+⚠️ This package won't work in the browser since [bandcamp.com](https://bandcamp.com/) blocks [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) requests.
 
-The scraper allows you to:
+Documentations
+- [Typescript documentation](https://masterT.github.io/bandcamp-scraper/typescript/)
 
-- search `artist`, `album`, `track`, `fan`, `label`
-- get album urls from an artist url
-- get album info from an album url
-- get album products from an album url
-- get artist info from an artist url
+---
 
-#### Why ?
+## Table of Contents
 
-Because Bandcamp has shut down their public API and don't plan to reopen it.
+* [Requirements](#requirements)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Documentation](#documentation)
+* [Development](#development)
+* [License](#license)
 
-[https://bandcamp.com/developer](https://bandcamp.com/developer)
+## Requirements
+
+- Node.js
 
 ## Installation
 
-```bash
-npm i --save bandcamp-scraper
+Using _npm_:
+
+```shell
+npm install -s bandcamp-scraper
+```
+
+Using _yarn_:
+
+```shell
+yarn add bandcamp-scraper
+```
+
+With ES6 modules:
+
+```js
+import BandcampScraper from require('bandcamp-scraper');
+```
+
+With CommonJS modules:
+
+```js
+const BandcampScraper = require('bandcamp-scraper');
 ```
 
 ## Usage
 
-### `search(params, callback)`
+...
 
-Search any resources that match the given `params.query` for the current `params.page`.
+## Documentation
 
-- params _Object_ - query _String_ - page _Integer_ (default `1`)
-- callback _Function(error, searchResults)_
+- [Typescript documentation](https://masterT.github.io/bandcamp-scraper/typescript/)
 
-#### Search Results
+...
 
-An array of resources that have different properties depending on their _type_ property: **artist**, **album**, **track**, **fan**, or **label**.
+## Development
 
-Every resource matches the [search-result JSON schema](/schemas/search-result.json).
+Requirements:
+- Yarn
 
-#### Example
+### Documentation
 
-```js
-const bandcamp = require('bandcamp-scraper')
+Generate documentation using [TypeDoc](https://typedoc.org/):
 
-const params = {
-  query: 'Coeur de pirate',
-  page: 1
-}
-
-bandcamp.search(params, function (error, searchResults) {
-  if (error) {
-    console.log(error)
-  } else {
-    console.log(searchResults)
-  }
-})
+```shell
+yarn documentation
 ```
 
-[View example with output](examples/search.js).
+### Lint
 
-### `getAlbumsWithTag(params, callback)`
+Executing lint check using [ESLint](https://eslint.org/):
 
-Search for albums with the tag `params.tag` for the current `params.page`.
-
-- params _Object_ - tag _String_ - page _Integer_ (default `1`)
-- callback _Function(error, tagResults)_
-
-#### Tag Results
-
-An array of album information. Matches the [tag-result JSON schema](/schemas/tag-result.json).
-
-#### Example
-
-```js
-const bandcamp = require('bandcamp-scraper')
-
-const params = {
-  tag: 'nuwrld',
-  page: 1
-}
-
-bandcamp.getAlbumsWithTag(params, function (error, tagResults) {
-  if (error) {
-    console.log(error)
-  } else {
-    console.log(tagResults)
-  }
-})
+```shell
+yarn lint
 ```
 
-[View example with output](examples/tag.js).
+Executing lint fix using [ESLint](https://eslint.org/):
 
-### `getAlbumUrls(artistUrl, callback)`
-
-Retrieve the album URLs from an artist URL.
-Please note: for Bandcamp labels you may want to use the `getArtistsUrls` function to retrieve the list of signed artists first.
-
-- artistUrl _String_
-- callback _Function(error, albumUrls)_
-
-#### Example
-
-```js
-const bandcamp = require('bandcamp-scraper')
-
-const artistUrl = 'http://musique.coeurdepirate.com/'
-bandcamp.getAlbumUrls(artistUrl, function (error, albumUrls) {
-  if (error) {
-    console.log(error)
-  } else {
-    console.log(albumUrls)
-  }
-})
+```shell
+yarn format
 ```
 
-[View example with output](examples/getAlbumUrls.js).
+### Test
 
-### `getAlbumProducts(albumUrl, callback)`
+Executing [Jest](https://jestjs.io/) tests for unit and integration test suites:
 
-Retrieves all the album's products from its URL.
-
-- albumUrl _String_
-- callback _Function(error, albumProducts)_
-
-#### Album Products
-
-An array of album products that matches the [album-product JSON schema](/schemas/album-product.json).
-
-#### Example
-
-```js
-const bandcamp = require('bandcamp-scraper')
-
-const albumUrl = 'http://musique.coeurdepirate.com/album/blonde'
-bandcamp.getAlbumProducts(albumUrl, function (error, albumProducts) {
-  if (error) {
-    console.log(error)
-  } else {
-    console.log(albumProducts)
-  }
-})
+```shell
+yarn test
 ```
 
-[View example with output](examples/getAlbumProducts.js).
+Executing [Jest](https://jestjs.io/) tests for unit ([jest.unit.config.js](./jest.unit.config.js)) test suites:
 
-### `getAlbumInfo(albumUrl, callback)`
-
-Retrieves the album's info from its URL.
-
-- albumUrl _String_
-- callback _Function(error, albumInfo)_
-
-#### Album Info
-
-An _Object_ that represents the album's info. It matches the [album-info JSON schema](/schemas/album-info.json).
-
-#### Example
-
-```js
-const bandcamp = require('bandcamp-scraper')
-
-const albumUrl = 'http://musique.coeurdepirate.com/album/blonde'
-bandcamp.getAlbumInfo(albumUrl, function (error, albumInfo) {
-  if (error) {
-    console.log(error)
-  } else {
-    console.log(albumInfo)
-  }
-})
+```shell
+yarn test:unit
 ```
 
-[View example with output](examples/getAlbumInfo.js).
+Executing [Jest](https://jestjs.io/) tests for integration ([jest.integration.config.js](./jest.integration.config.js)) test suites:
 
-### `getArtistUrls(labelUrl, callback)`
-
-Retrieves an array of artist URLs from a label's URL for further scraping.
-
-- labelUrl _String_
-- callback _Function(error, albumInfo)_
-
-#### Example
-
-```js
-const bandcamp = require('bandcamp-scraper')
-
-const labelUrl = 'https://randsrecords.bandcamp.com'
-bandcamp.getArtistUrls(labelUrl, function (error, artistsUrls) {
-  if (error) {
-    console.log(error)
-  } else {
-    console.log(artistsUrls)
-  }
-})
+```shell
+yarn test:integration
 ```
-
-[View example with output](examples/getArtistUrls.js).
-
-### `getArtistInfo(artistUrl, callback)`
-
-Retrieves the artist's info from its URL.
-
-- artistUrl _String_
-- callback _Function(error, artistInfo)_
-
-#### Artist Info
-
-An _Object_ that represents the artist's info. It matches the [artist-info JSON schema](/schemas/artist-info.json).
-#### Example
-
-```js
-const bandcamp = require('bandcamp-scraper')
-
-const artistUrl = 'http://musique.coeurdepirate.com'
-bandcamp.getArtistInfo(artistUrl, function (error, artistInfo) {
-  if (error) {
-    console.log(error)
-  } else {
-    console.log(artistInfo)
-  }
-})
-```
-
-[View example with output](examples/getArtistInfo.js).
-
-## Test
-
-Feature tests are run _daily_, thanks to [GitHub Action](https://docs.github.com/en/free-pro-team@latest/actions) schedule actions. This way we know if the scraper is ever broken.
-
-Run the test:
-
-```bash
-npm test
-```
-
-## Contributing
-
-Contribution is welcome! Open an issue first.
 
 ## License
 
-MIT.
+[MIT](./LICENSE)

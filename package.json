@@ -1,12 +1,18 @@
 {
   "name": "bandcamp-scraper",
-  "version": "1.4.1",
-  "description": "A scraper for https://bandcamp.com",
-  "main": "lib/index.js",
+  "version": "2.0.0",
+  "description": "TypeScript and JavaScript client for Bandcamp using scraping and private API.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "standard && jasmine",
-    "lint": "standard",
-    "lint-fix": "standard --fix"
+    "prepublishOnly": "tsc",
+    "build": "tsc",
+    "lint": "eslint .",
+    "documentation": "typedoc src/index.ts",
+    "format": "eslint . --fix",
+    "test:unit": "jest -c jest.unit.config.js --passWithNoTests",
+    "test:integration": "jest -c jest.integration.config.js --passWithNoTests",
+    "test": "yarn test:unit && yarn test:integration"
   },
   "repository": {
     "type": "git",
@@ -14,34 +20,48 @@
   },
   "author": "Simon Thiboutôt <salut@simonthiboutot.com> (http://simonthiboutot.com)",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "bugs": {
     "url": "https://github.com/masterT/bandcamp-scraper/issues"
   },
   "homepage": "https://github.com/masterT/bandcamp-scraper",
   "devDependencies": {
-    "jasmine": "^2.8.0",
-    "standard": "^16.0.3"
-  },
-  "dependencies": {
-    "ajv": "^4.11.8",
-    "cheerio": "^0.22.0",
-    "json5": "^0.5.1",
-    "linez": "^4.1.4",
-    "scrape-it": "^3.3.2",
-    "tinyreq": "^3.2.5"
+    "@types/jest": "^27.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.4.7",
+    "prettier": "^2.5.1",
+    "ts-jest": "^27.1.2",
+    "typedoc": "^0.22.10",
+    "typescript": "^4.5.4"
   },
   "directories": {
     "example": "examples"
   },
   "keywords": [
-    "scraper",
-    "api",
-    "bandcamp",
-    "music",
-    "resources",
     "album",
-    "song",
+    "api",
+    "artist",
+    "bandcamp.com",
+    "bandcamp",
+    "client",
+    "fan",
+    "label",
+    "music",
+    "private api",
     "product",
-    "fan"
+    "resources",
+    "scraper",
+    "scraping",
+    "scrapper",
+    "scrapping",
+    "song",
+    "track",
+    "user"
   ]
 }
