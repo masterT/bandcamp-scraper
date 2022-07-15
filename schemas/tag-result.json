@@ -19,7 +19,6 @@
     },
     "required": [
         "name",
-        "artist",
-        "url"
+        "artist"
     ]
 }

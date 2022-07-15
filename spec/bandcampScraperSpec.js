@@ -13,6 +13,14 @@ const artists = [
   'Faded Paper Figures'
 ]
 
+const tags = [
+  'nuwrld',
+  'brooklyn',
+  'coldwave',
+  'punk',
+  'jazz'
+]
+
 const artistUrls = [
   'http://musique.coeurdepirate.com',
   'https://macdemarco.bandcamp.com',
@@ -82,7 +90,21 @@ describe('bandcamp-scraper', function () {
       )
     })
   })
-
+  describe('getAlbumsWithTag', function () {
+    it('scrape tag name and artist', function (done) {
+      const tag = sample(tags)
+      expect(
+        bandcamp.getAlbumsWithTag({ tag: tag }, function (error, albums) {
+          if (error) console.log('error', error)
+          if (albums) console.log('albums', albums)
+          expect(error).toBeNull()
+          expect(Array.isArray(albums)).toBe(true)
+          expect(albums.length).toBeGreaterThan(0)
+          done()
+          // TODO validate with JSON schema
+        }))
+    })
+  })
   describe('getAlbumUrls', function () {
     it('scrape album urls', function (done) {
       const artistUrl = sample(artistUrls)
