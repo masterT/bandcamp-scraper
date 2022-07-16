@@ -78,7 +78,6 @@ describe('bandcamp-scraper', function () {
       const artist = sample(artists)
       expect(
         bandcamp.search({ query: artist }, function (error, searchResults) {
-          console.log('artist', artist)
           if (error) console.log('error', error)
           if (searchResults) console.log('searchResults', searchResults)
           expect(error).toBeNull()
