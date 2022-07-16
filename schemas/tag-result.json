@@ -15,10 +15,16 @@
         "url": {
             "type": "string",
             "format": "uri"
+        },
+        "artist_url": {
+            "type": "string",
+            "format": "uri"
         }
     },
     "required": [
         "name",
-        "artist"
+        "artist",
+        "url",
+        "artist_url"
     ]
 }
