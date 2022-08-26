@@ -68,7 +68,10 @@ const labelsUrls = [
 ]
 
 const trackUrls = [
-  'https://dafnez.bandcamp.com/track/serenade'
+  'https://dafnez.bandcamp.com/track/serenade',
+  'https://xaerarch.bandcamp.com/track/devour-303-absynth-mix',
+  'https://backtick.bandcamp.com/track/approx-start-06-51',
+  'https://ripcordz.bandcamp.com/track/the-beta-58s-leave-me-alone'
 ]
 
 function sample (array) {
