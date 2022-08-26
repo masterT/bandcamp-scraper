@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {},
+    "title" : "track-info",
+    "description" : "The JSON schema that matches album info.",
+    "id": "https://mastert.github.io/bandcamp-scraper/schemas/track-info.json",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "artist":{ "type": "string" },
+      "title":{ "type": "string" },
+      "url":{ "type": "string", "format": "uri" },
+      "imageUrl":{
+        "type": "string",
+        "format": "uri"
+      },
+      "trackId": { "type": "number" },
+      "raw": {
+        "type": "object"
+      }
+    },
+    "required": [ "title", "url", "trackId", "raw" ]
+  }
+  
