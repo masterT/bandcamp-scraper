@@ -67,6 +67,13 @@ const labelsUrls = [
   'https://randsrecords.bandcamp.com'
 ]
 
+const trackUrls = [
+  'https://dafnez.bandcamp.com/track/serenade',
+  'https://xaerarch.bandcamp.com/track/devour-303-absynth-mix',
+  'https://backtick.bandcamp.com/track/approx-start-06-51',
+  'https://ripcordz.bandcamp.com/track/the-beta-58s-leave-me-alone'
+]
+
 function sample (array) {
   const index = Math.floor(Math.random() * array.length)
   return array[index]
@@ -188,6 +195,20 @@ describe('bandcamp-scraper', function () {
           expect(typeof artistInfo).toEqual('object')
           done()
           // TODO validate with JSON schema
+        })
+      )
+    })
+  })
+  describe('getTrackInfo', function () {
+    it('scrapes track info', function (done) {
+      const trackUrl = sample(trackUrls)
+      expect(
+        bandcamp.getTrackInfo(trackUrl, function (error, trackInfo) {
+          if (error) console.log('error', error)
+          if (trackInfo) console.log(trackInfo)
+          expect(error).toBeNull()
+          expect(typeof trackInfo).toEqual('object')
+          done()
         })
       )
     })
