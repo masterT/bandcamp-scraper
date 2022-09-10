@@ -229,6 +229,31 @@ bandcamp.getArtistInfo(artistUrl, function (error, artistInfo) {
 
 [View example with output](examples/getArtistInfo.js).
 
+### `getTrackInfo(trackUrl, callback)`
+
+Retrieves the track info from its URL.
+
+- trackUrl _String_
+- callback _Function(error, trackInfo)_
+
+#### Track Info
+
+An _Object_ that represents the track's info. It matches the [track-info JSON schema](/schemas/track-info.json).
+#### Example
+
+```js
+const bandcamp = require('bandcamp-scraper')
+
+const trackUrl = 'https://dafnez.bandcamp.com/track/serenade'
+bandcamp.getTrackInfo(trackUrl, function (error, trackInfo) {
+  if (error) {
+    console.log(error)
+  } else {
+    console.log(trackInfo)
+  }
+})
+```
+
 ## Test
 
 Feature tests are run _daily_, thanks to [GitHub Action](https://docs.github.com/en/free-pro-team@latest/actions) schedule actions. This way we know if the scraper is ever broken.
